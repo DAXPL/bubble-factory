@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
+        if(factories.Length>0) factories[0].BuyFactory(true);
         StartCoroutine(PasiveIncomeThread());
     }
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         score += amout;
     }
+    
     public int GetScore() 
     {
         return score; 
@@ -42,7 +44,6 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            Debug.Log("hege");
             foreach (var fact in factories) 
             {
                 fact.PasiveIncome();
