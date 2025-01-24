@@ -191,6 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3956371645486867486}
+  - component: {fileID: 5196800389052215210}
   m_Layer: 5
   m_Name: StorePanel
   m_TagString: Untagged
@@ -220,6 +221,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!225 &5196800389052215210
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502678014685698243}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1747265700653193623
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveVertically: 1
   offset: 500
-  canva: {fileID: 0}
+  canva: {fileID: 5196800389052215210}
   panelSliderButtonManager: {fileID: 11400000, guid: eb6806b946898124e9f0a3cde009d5fb, type: 2}
   movingSpeed: 0.05
   menuOpened: 0
