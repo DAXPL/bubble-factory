@@ -6,6 +6,8 @@ public class Factory : MonoBehaviour
 {
     [SerializeField] private string factoryName;
     [SerializeField] private int factoryPrice;
+    [SerializeField] private GameObject bubble;
+    [SerializeField] private GameObject goldenBubble;
     private bool isBought = false;
 
 
@@ -41,12 +43,20 @@ public class Factory : MonoBehaviour
         while(bubbleProgress >= bubbleCost)
         {
             bubbleProgress -= bubbleCost;
-
-            GameManager.Instance.IncreaseScore((Random.Range(0, 1.0f) <= goldenBubbleChance ? 10 : 1));
+            bool goldenBubbleRand = Random.Range(0, 1.0f) <= goldenBubbleChance;
+            GameManager.Instance.IncreaseScore(goldenBubbleRand ? 10 : 1);
+          
+            if (isActiveAndEnabled) 
+            {
+                GameObject preab = goldenBubbleRand ? goldenBubble : bubble;
+                if(preab == null) return;
+                Destroy(Instantiate(preab,this.transform,false), 5);
+            }
+            
         }
     }
 
-    public bool BuyFactory(bool force)
+    public bool BuyFactory(bool force=false)
     {
         bool canAfford = GameManager.Instance == null &&
                     GameManager.Instance.GetScore() > factoryPrice;
@@ -58,6 +68,8 @@ public class Factory : MonoBehaviour
             {
                 GameManager.Instance.IncreaseScore(factoryPrice);
             }
+            Button button = GetComponent<Button>();
+            if (button != null) button.interactable = isBought;
             return true;
         }
         return false;
