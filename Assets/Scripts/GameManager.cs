@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     public static GameManager Instance;
     [SerializeField] private Factory[] factories;
+    private int factoryPointer=0;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
+        if(factories.Length>0) factories[0].BuyFactory(true);
         StartCoroutine(PasiveIncomeThread());
     }
 
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         score += amout;
     }
+    
     public int GetScore() 
     {
         return score; 
@@ -42,11 +45,21 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            Debug.Log("hege");
             foreach (var fact in factories) 
             {
                 fact.PasiveIncome();
             }
         }
+    }
+
+    //by changing the sign you can rotate the list left or right
+    public void SwitchFactories(int val = 1)
+    {
+        factoryPointer = (factoryPointer+val)%factories.Length;
+
+    }
+    public Factory GetCurrentFactory()
+    {
+        return factories[factoryPointer];
     }
 }

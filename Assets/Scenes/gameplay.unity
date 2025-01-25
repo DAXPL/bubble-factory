@@ -344,6 +344,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5d9b2635ec48e4792fe3154c99344b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  factoryName: 
+  factoryPrice: 0
+  bubble: {fileID: 278613197264751638, guid: df7bbeef14d29b840932999a15bed0ca, type: 3}
+  goldenBubble: {fileID: 1851688851834446746, guid: 61d2669127cced44faaebd0f83316328, type: 3}
 --- !u!1 &733222016
 GameObject:
   m_ObjectHideFlags: 0
