@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEditor.UIElements;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     public static GameManager Instance;
     [SerializeField] private Factory[] factories;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private GameObject PopUp;
     private int factoryPointer=0;
 
     private void Awake()
@@ -23,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         if(factories.Length>0) factories[0].BuyFactory(true);
         StartCoroutine(PasiveIncomeThread());
+        scoreText.SetText($"{score} Bubbles");
     }
 
     private void OnDestroy()
@@ -30,9 +34,18 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
     }
 
+    public GameObject GetPopUp() {
+        return PopUp;
+    }
+
     public void IncreaseScore(int amout=1)
     {
         score += amout;
+        scoreText.SetText($"{score} Bubbles");
+    }
+
+    public int GetFactoriesAmount() {
+        return factories.Length;
     }
     
     public int GetScore() 
@@ -56,7 +69,6 @@ public class GameManager : MonoBehaviour
     public void SwitchFactories(int val = 1)
     {
         factoryPointer = (factoryPointer+val)%factories.Length;
-
     }
     public Factory GetCurrentFactory()
     {
