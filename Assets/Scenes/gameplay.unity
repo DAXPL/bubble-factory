@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7718397774822349988, guid: 61bb85b6e5f2b26428bfb789489ba8d7, type: 3}
       propertyPath: factoryPrice
-      value: 1001
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7718397774822349988, guid: 61bb85b6e5f2b26428bfb789489ba8d7, type: 3}
       propertyPath: onBuy.m_PersistentCalls.m_Calls.Array.size
