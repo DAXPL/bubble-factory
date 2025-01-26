@@ -20,12 +20,7 @@ public class ButtonManager : ScriptableObject {
         MusicManager.instance.GetAudioSource().volume = volume;
     }
     
-    public void SoundEffectsSlider(float volume) {
-        if (SoundEffectsManager.instance == null)
-            return;
-
-        SoundEffectsManager.instance.GetAudioSource().volume = volume;
-    }
+    
 
     public void HideUpgrades(CanvasGroup canvasGroup) {
         if (GameManager.Instance.GetFactoriesAmount() < 2) {

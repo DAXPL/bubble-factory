@@ -26,4 +26,12 @@ public class ButtonSoundMixer : MonoBehaviour
         audioSource.PlayOneShot(sounds[Random.Range(0,sounds.Length)]);
     }
 
+    public void SoundEffectsSlider(float volume) {
+        if (audioSource == null)
+            return;
+
+        audioSource.volume = volume;
+        startVolume = volume;
+    }
+
 }
