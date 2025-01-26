@@ -65,7 +65,7 @@ public class Factory : MonoBehaviour {
 
     public bool BuyFactory(bool force=false)
     {
-        bool canAfford = GameManager.Instance == null &&
+        bool canAfford = GameManager.Instance != null &&
                     GameManager.Instance.GetScore() > factoryPrice;
         if (force || canAfford)
         {

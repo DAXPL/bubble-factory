@@ -314,6 +314,10 @@ PrefabInstance:
       propertyPath: factoryName
       value: Bubble Wrap
       objectReference: {fileID: 0}
+    - target: {fileID: 7718397774822349988, guid: 61bb85b6e5f2b26428bfb789489ba8d7, type: 3}
+      propertyPath: factoryPrice
+      value: 1001
+      objectReference: {fileID: 0}
     - target: {fileID: 7988680600458053649, guid: 61bb85b6e5f2b26428bfb789489ba8d7, type: 3}
       propertyPath: m_SizeDelta.x
       value: 60
@@ -343,6 +347,23 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4503667997857493874, guid: 61bb85b6e5f2b26428bfb789489ba8d7, type: 3}
   m_PrefabInstance: {fileID: 55235641}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &154360953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8495379362631719211, guid: 428dc23a6c2e35449abed3d39a3a1219, type: 3}
+  m_PrefabInstance: {fileID: 1454699936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &154360956
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154360953}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &232929704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1299,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factories:
   - {fileID: 273911498}
-  - {fileID: 623060609}
   scoreText: {fileID: 547258630}
 --- !u!1 &869646308
 GameObject:
@@ -2747,6 +2767,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6550550051378086576, guid: 428dc23a6c2e35449abed3d39a3a1219, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 154360956}
     - target: {fileID: 6669484113090624337, guid: 428dc23a6c2e35449abed3d39a3a1219, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3067,7 +3091,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7351743115695865955, guid: 428dc23a6c2e35449abed3d39a3a1219, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8495379362631719211, guid: 428dc23a6c2e35449abed3d39a3a1219, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 154360956}
   m_SourcePrefab: {fileID: 100100000, guid: 428dc23a6c2e35449abed3d39a3a1219, type: 3}
 --- !u!1 &1502716450
 GameObject:

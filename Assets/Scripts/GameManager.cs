@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
         score += amout;
         scoreText.SetText($"{score} Bubbles");
     }
+
+    public int GetFactoriesAmount() {
+        return factories.Length;
+    }
     
     public int GetScore() 
     {

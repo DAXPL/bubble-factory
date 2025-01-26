@@ -26,4 +26,16 @@ public class ButtonManager : ScriptableObject {
 
         SoundEffectsManager.instance.GetAudioSource().volume = volume;
     }
+
+    public void HideUpgrades(CanvasGroup canvasGroup) {
+        if (GameManager.Instance.GetFactoriesAmount() < 2) {
+            canvasGroup.interactable = false;
+            canvasGroup.alpha = 0.5f;
+            return;
+        }
+
+        canvasGroup.interactable = true;
+        canvasGroup.alpha = 1;
+
+    }
 }
