@@ -5,6 +5,7 @@ public class CatMove : MonoBehaviour {
     [SerializeField] private Vector2 newPos;
     private Vector2 startPos;
     private RectTransform rectTransform;
+    [SerializeField] private GameEvent onCatShow;
 
     private void Start() {
         rectTransform = GetComponent<RectTransform>();
@@ -31,6 +32,7 @@ public class CatMove : MonoBehaviour {
         }
 
         rectTransform.anchoredPosition = destination;
+        if(onCatShow) onCatShow.Raise();
 
         yield return new WaitForSeconds(2f);
 

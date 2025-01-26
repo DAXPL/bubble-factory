@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Factory : MonoBehaviour {
@@ -25,10 +26,7 @@ public class Factory : MonoBehaviour {
     private float additionalSize = 0;
     private Vector3 startSize = Vector3.zero;
 
-    [SerializeField] private AudioSource sourceOfAudio;
-    [SerializeField] private AudioClip bubbleSound;
-    [SerializeField] private AudioClip buySound;
-    [SerializeField] private AudioClip cantBuySound;
+    [SerializeField] private UnityEvent onBuy;
 
     private void Awake() {
         factorySprite = GetComponent<Image>();
@@ -88,17 +86,18 @@ public class Factory : MonoBehaviour {
     public bool BuyFactory(bool force=false)
     {
         bool canAfford = GameManager.Instance != null &&
-                    GameManager.Instance.GetScore() > factoryPrice;
+                    GameManager.Instance.GetScore() >= factoryPrice;
         if (force || canAfford)
         {
             isBought = true;
 
             if(force == false && canAfford)
             {
-                GameManager.Instance.IncreaseScore(factoryPrice);
+                GameManager.Instance.IncreaseScore(-factoryPrice);
             }
             Button button = GetComponent<Button>();
             if (button != null) button.interactable = isBought;
+            onBuy.Invoke();
             return true;
         }
         return false;
@@ -107,7 +106,6 @@ public class Factory : MonoBehaviour {
     public void TryBuyFactory()
     {
         bool result = BuyFactory();
-        if (sourceOfAudio) sourceOfAudio.PlayOneShot(result? buySound : cantBuySound);
     }
 
     public string GetFactoryName() {
