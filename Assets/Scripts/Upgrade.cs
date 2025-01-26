@@ -49,7 +49,9 @@ public class Upgrade : MonoBehaviour {
         if (!CanBuy())
             return;
 
-        currentFactory.IncreasePasiveMultiplier(currentFactory.GetPasiveMultiplier()/10);
+        float currentMultiplier = currentFactory.GetPasiveMultiplier();
+        //For the first 10 upgrades we reduce the time by 1 second. Then we cut by 10% of the current level
+        currentFactory.IncreasePasiveMultiplier(currentMultiplier<=10?1f: currentMultiplier/10);
     }
 
     public void UpgradeBubbleMultiplier(Factory currentFactory) {
