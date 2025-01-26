@@ -22,42 +22,64 @@ public class Factory : MonoBehaviour {
 
     private float bubbleCost = 10;
 
+    private float additionalSize = 0;
+    private Vector3 startSize = Vector3.zero;
+
+    [SerializeField] private AudioSource sourceOfAudio;
+    [SerializeField] private AudioClip bubbleSound;
+    [SerializeField] private AudioClip buySound;
+    [SerializeField] private AudioClip cantBuySound;
+
     private void Awake() {
         factorySprite = GetComponent<Image>();
     }
 
     private void Start()
     {
+        startSize = this.transform.localScale;
         hasChangedToThreeChimneys = false;
         Button button = GetComponent<Button>();
         if (button != null) button.interactable = isBought;
     }
 
+    private void Update()
+    {
+        additionalSize -= Time.deltaTime/2;
+        additionalSize = Mathf.Clamp(additionalSize, 0, 0.2f);
+        this.transform.localScale = startSize + (Vector3.one* additionalSize);
+    }
+
     public void OnClick()
     {
+        additionalSize += 0.1f;
         bubbleProgress += 1 * tapMultiplier;
         CheckBubbleProgress();
     }
 
     public void PasiveIncome()
     {
+        
         bubbleProgress += pasiveIncomeMultiplier;
         CheckBubbleProgress();
     }
 
     private void CheckBubbleProgress()
     {
+        int bubbleCount = 0;
         while(bubbleProgress >= bubbleCost)
         {
             bubbleProgress -= bubbleCost;
             bool goldenBubbleRand = Random.Range(0, 1.0f) <= goldenBubbleChance;
             GameManager.Instance.IncreaseScore(goldenBubbleRand ? 10 : 1);
           
-            if (isActiveAndEnabled) 
+            if (isActiveAndEnabled && bubbleCount<5) 
             {
                 GameObject preab = goldenBubbleRand ? goldenBubble : bubble;
                 if(preab == null) return;
-                Destroy(Instantiate(preab,this.transform,false), 5);
+                GameObject buble = Instantiate(preab, this.transform, false);
+                buble.transform.SetParent(this.transform.parent);
+                Destroy(buble, 5);
+                bubbleCount++;
             }
             
         }
@@ -80,6 +102,12 @@ public class Factory : MonoBehaviour {
             return true;
         }
         return false;
+    }
+
+    public void TryBuyFactory()
+    {
+        bool result = BuyFactory();
+        if (sourceOfAudio) sourceOfAudio.PlayOneShot(result? buySound : cantBuySound);
     }
 
     public string GetFactoryName() {

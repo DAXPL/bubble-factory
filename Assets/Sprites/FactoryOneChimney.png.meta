@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FactoryOneChimney_0: 7080754706689134517
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
