@@ -1,7 +1,7 @@
+using System;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 public class Upgrade : MonoBehaviour {
     [Tooltip("Upgrade informations")]
@@ -16,58 +16,62 @@ public class Upgrade : MonoBehaviour {
 
 
     private void Start() {
+        CustomEvents.current.OnFactorySwitch += UpdateUIPrice;
+        //CustomEvents.current.OnFactorySwitch += UpdateUIPrice;
+
         UpdateUIPrice();
         UpdateUIInformation();
     }
 
+
     public void UpdateUIPrice() {
         buyButtonPriceText.SetText(price.ToString());
-        upgradeTitleText.SetText(upgradeTitle);
-        upgradeDescriptionText.SetText(upgradeDescription);
         // Update The item ui (this will be also called when changed the factory)
+        
     }
-    
+
+
     public void UpdateUIInformation() {
         upgradeTitleText.SetText(upgradeTitle);
         upgradeDescriptionText.SetText(upgradeDescription);
     }
 
-    public void UpgradeTapMultiplier() {
+    public void UpgradeTapMultiplier(Factory currentFactory) {
         if (GameManager.Instance == null)
             return;
 
         if (!CanBuy())
             return;
 
-        Factory currentFactory = GameManager.Instance.GetCurrentFactory();
+        //Factory currentFactory = GameManager.Instance.GetCurrentFactory();
         currentFactory.IncreaseTapMultiplier(currentFactory.GetTapMultiplier()/10);
     }
     
-    public void UpgradePasiveMultiplier() {
+    public void UpgradePasiveMultiplier(Factory currentFactory) {
         if (GameManager.Instance == null)
             return;
 
         if (!CanBuy())
             return;
 
-        Factory currentFactory = GameManager.Instance.GetCurrentFactory();
+        //Factory currentFactory = GameManager.Instance.GetCurrentFactory();
         currentFactory.IncreasePasiveMultiplier(currentFactory.GetPasiveMultiplier()/10);
     }
 
-    public void UpgradeBubbleMultiplier() {
+    public void UpgradeBubbleMultiplier(Factory currentFactory) {
         if (GameManager.Instance == null)
             return;
 
         if (!CanBuy()) 
             return;
 
-        Factory currentFactory = GameManager.Instance.GetCurrentFactory();
+        //Factory currentFactory = GameManager.Instance.GetCurrentFactory();
         currentFactory.IncreaseBubbleMultiplier(currentFactory.GetBubbleMultiplier()/10);
     }
 
     private bool CanBuy() {
         if (GameManager.Instance == null) {
-            Debug.LogError("No GameManager on the scene");
+            UnityEngine.Debug.LogError("No GameManager on the scene");
             return false;
         }
 
@@ -79,7 +83,7 @@ public class Upgrade : MonoBehaviour {
         }
 
         // Show Popup "not enugh bubbles
-        Debug.LogWarning("Not enough bubbles");
+        UnityEngine.Debug.LogWarning("Not enough bubbles");
         return false;
     }
 

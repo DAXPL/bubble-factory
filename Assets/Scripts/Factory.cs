@@ -1,15 +1,13 @@
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Factory : MonoBehaviour
-{
+public class Factory : MonoBehaviour {
     [SerializeField] private string factoryName;
     [SerializeField] private int factoryPrice;
     [SerializeField] private GameObject bubble;
     [SerializeField] private GameObject goldenBubble;
     private bool isBought = false;
-
 
     private float bubbleProgress = 0;
     private float tapMultiplier = 1;
@@ -73,6 +71,10 @@ public class Factory : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public string GetFactoryName() {
+        return factoryName;
     }
 
     public void IncreaseTapMultiplier(float amount)
