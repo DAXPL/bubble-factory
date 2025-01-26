@@ -219,8 +219,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 1200}
+  m_AnchoredPosition: {x: 0.00032425, y: 0.009674072}
+  m_SizeDelta: {x: 645.82, y: 927.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8692786785045764414
 CanvasRenderer:
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 3956371645486867486}
   - component: {fileID: 5196800389052215210}
   m_Layer: 5
-  m_Name: StorePanel
+  m_Name: Store
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,8 +398,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -1300}
-  m_SizeDelta: {x: 800, y: 1200}
+  m_AnchoredPosition: {x: 0, y: -963.5}
+  m_SizeDelta: {x: 645.8213, y: 927.6787}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &6770369204498767907
 CanvasRenderer:
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveVertically: 1
-  offset: 500
+  offset: 130
   canva: {fileID: 5196800389052215210}
   panelSliderButtonManager: {fileID: 11400000, guid: eb6806b946898124e9f0a3cde009d5fb, type: 2}
   movingSpeed: 0.05
@@ -584,8 +584,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -17}
+  m_AnchoredPosition: {x: 0, y: -147.91653}
+  m_SizeDelta: {x: 20, y: -164.9166}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1071001470408470904
 CanvasRenderer:
@@ -668,8 +668,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2871188985341892980}
   m_HandleRect: {fileID: 277679811927622230}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.6671653
+  m_Value: 1.0000002
+  m_Size: 0.6700247
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -709,8 +709,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 140}
+  m_AnchoredPosition: {x: 0.00018692, y: 0}
+  m_SizeDelta: {x: 645.82, y: 140}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2308164886319718533
 CanvasRenderer:
@@ -820,8 +820,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 140}
+  m_AnchoredPosition: {x: -0.000045776, y: 0}
+  m_SizeDelta: {x: 527.68, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8803669455476300986
 CanvasRenderer:
@@ -878,8 +878,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 76.7
-  m_fontSizeBase: 76.7
+  m_fontSize: 58.39
+  m_fontSizeBase: 58.39
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1032,8 +1032,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00003373623, y: -0.000061035156}
-  m_SizeDelta: {x: -0.0001, y: 1798.6548}
+  m_AnchoredPosition: {x: 0.00003373623, y: -0.0001}
+  m_SizeDelta: {x: -0.0001, y: 1384.5161}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3830711633911717423
 MonoBehaviour:
@@ -1050,13 +1050,13 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 134
+    m_Top: 137
     m_Bottom: 0
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 1
   m_CellSize: {x: 100, y: 682.23}
-  m_Spacing: {x: 0, y: 142.6}
+  m_Spacing: {x: 0, y: -60}
   m_Constraint: 1
   m_ConstraintCount: 1
 --- !u!1001 &1206664142444190705
@@ -2122,8 +2122,7 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 684819414545280473, guid: 21a366df2df81844b903150296db25ee, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

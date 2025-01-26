@@ -148,6 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factoryName: 
   factoryPrice: 0
+  factoryTwoChimneysSprite: {fileID: -2726332401070695384, guid: cb3e7aa804972394d81088bc0693669e, type: 3}
+  factoryThreeChimneysSprite: {fileID: -3998114377152648888, guid: 34dc5ba3c76fdf448a981496512fc1c8, type: 3}
   bubble: {fileID: 278613197264751638, guid: df7bbeef14d29b840932999a15bed0ca, type: 3}
   goldenBubble: {fileID: 1851688851834446746, guid: 61d2669127cced44faaebd0f83316328, type: 3}
 --- !u!1 &6665255421644086733

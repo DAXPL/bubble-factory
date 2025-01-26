@@ -242,7 +242,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5202062942419659524}
-  - component: {fileID: 684819414545280473}
   - component: {fileID: 5779405947932934047}
   m_Layer: 5
   m_Name: FactoryUpgrade
@@ -274,26 +273,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -145.32422}
   m_SizeDelta: {x: 780, y: 764.6758}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &684819414545280473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7303510531045802714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 1
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!114 &5779405947932934047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,13 +288,13 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 169
+    m_Top: 120
     m_Bottom: 0
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 1
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 0, y: 142.6}
+  m_Spacing: {x: 0, y: 65.69}
   m_Constraint: 1
   m_ConstraintCount: 1
 --- !u!1001 &4502598703491735037
@@ -535,8 +514,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8236058390207708509, guid: d7c5bcc034c7cd84682ffcd03f97c20b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 64.532
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236058390207708509, guid: d7c5bcc034c7cd84682ffcd03f97c20b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 175
+      value: 122.4087
       objectReference: {fileID: 0}
     - target: {fileID: 8236058390207708509, guid: d7c5bcc034c7cd84682ffcd03f97c20b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -801,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8236058390207708509, guid: d7c5bcc034c7cd84682ffcd03f97c20b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 120
+      value: 91.2
       objectReference: {fileID: 0}
     - target: {fileID: 8236058390207708509, guid: d7c5bcc034c7cd84682ffcd03f97c20b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1061,8 +1044,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8236058390207708509, guid: d7c5bcc034c7cd84682ffcd03f97c20b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 75.2929
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236058390207708509, guid: d7c5bcc034c7cd84682ffcd03f97c20b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 175
+      value: 117.3382
       objectReference: {fileID: 0}
     - target: {fileID: 8236058390207708509, guid: d7c5bcc034c7cd84682ffcd03f97c20b, type: 3}
       propertyPath: m_LocalPosition.x

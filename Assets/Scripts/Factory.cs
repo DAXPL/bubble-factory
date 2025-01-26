@@ -5,9 +5,13 @@ using UnityEngine.UI;
 public class Factory : MonoBehaviour {
     [SerializeField] private string factoryName;
     [SerializeField] private int factoryPrice;
+    [SerializeField] private Sprite factoryTwoChimneysSprite;
+    [SerializeField] private Sprite factoryThreeChimneysSprite;
     [SerializeField] private GameObject bubble;
     [SerializeField] private GameObject goldenBubble;
     private bool isBought = false;
+    private bool hasChangedToThreeChimneys;
+    private Image factorySprite;
 
     private float bubbleProgress = 0;
     private float tapMultiplier = 1;
@@ -18,8 +22,13 @@ public class Factory : MonoBehaviour {
 
     private float bubbleCost = 10;
 
+    private void Awake() {
+        factorySprite = GetComponent<Image>();
+    }
+
     private void Start()
     {
+        hasChangedToThreeChimneys = false;
         Button button = GetComponent<Button>();
         if (button != null) button.interactable = isBought;
     }
@@ -80,7 +89,25 @@ public class Factory : MonoBehaviour {
     public void IncreaseTapMultiplier(float amount)
     {
         tapMultiplier += amount;
+        AddChimney();
     }
+
+    private void AddChimney() {
+        if (hasChangedToThreeChimneys)
+            return;
+
+        if (tapMultiplier >= 2 && tapMultiplier < 3) {
+            factorySprite.sprite = factoryTwoChimneysSprite;
+            return;
+        } 
+        
+        if (tapMultiplier >= 3) {
+            factorySprite.sprite = factoryThreeChimneysSprite;
+            hasChangedToThreeChimneys = true;
+        }
+
+    }
+
     public void MultiplyTapMultiplier(float amount)
     {
         tapMultiplier *= amount;

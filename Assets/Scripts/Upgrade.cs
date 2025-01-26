@@ -43,7 +43,6 @@ public class Upgrade : MonoBehaviour {
         if (!CanBuy())
             return;
 
-        //Factory currentFactory = GameManager.Instance.GetCurrentFactory();
         currentFactory.IncreaseTapMultiplier(currentFactory.GetTapMultiplier()/10);
     }
     
@@ -54,7 +53,6 @@ public class Upgrade : MonoBehaviour {
         if (!CanBuy())
             return;
 
-        //Factory currentFactory = GameManager.Instance.GetCurrentFactory();
         currentFactory.IncreasePasiveMultiplier(currentFactory.GetPasiveMultiplier()/10);
     }
 
@@ -65,7 +63,6 @@ public class Upgrade : MonoBehaviour {
         if (!CanBuy()) 
             return;
 
-        //Factory currentFactory = GameManager.Instance.GetCurrentFactory();
         currentFactory.IncreaseBubbleMultiplier(currentFactory.GetBubbleMultiplier()/10);
     }
 
