@@ -16,18 +16,13 @@ public class Upgrade : MonoBehaviour {
 
 
     private void Start() {
-        CustomEvents.current.OnFactorySwitch += UpdateUIPrice;
-        //CustomEvents.current.OnFactorySwitch += UpdateUIPrice;
-
         UpdateUIPrice();
         UpdateUIInformation();
     }
 
 
     public void UpdateUIPrice() {
-        buyButtonPriceText.SetText(price.ToString());
-        // Update The item ui (this will be also called when changed the factory)
-        
+        buyButtonPriceText.SetText($"{price} Bubbles");
     }
 
 

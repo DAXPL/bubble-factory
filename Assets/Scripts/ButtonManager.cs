@@ -4,10 +4,26 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "ButtonManager", menuName = "ButtonManager/New Button Manager")]
 public class ButtonManager : ScriptableObject {
-    private int factoryIndex = 1;
 
-    public void SwitchStoreFactory(TextMeshProUGUI factoryNameText) {
-        GameManager.Instance.SwitchFactories();
-        factoryNameText.SetText(GameManager.Instance.GetCurrentFactory().GetFactoryName());
+    public void ExitGame() {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
+
+    public void MusicSlider(float volume) {
+        if (MusicManager.instance == null)
+            return;
+
+        MusicManager.instance.GetAudioSource().volume = volume;
+    }
+    
+    public void SoundEffectsSlider(float volume) {
+        if (SoundEffectsManager.instance == null)
+            return;
+
+        SoundEffectsManager.instance.GetAudioSource().volume = volume;
     }
 }

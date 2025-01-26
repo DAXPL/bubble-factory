@@ -25,12 +25,7 @@ public class GameManager : MonoBehaviour
     {
         if(factories.Length>0) factories[0].BuyFactory(true);
         StartCoroutine(PasiveIncomeThread());
-    }
-
-    public void LoadFactoriesUpgrades() {
-        foreach (Factory fact in factories) {
-            //fact.upgrades
-        }
+        scoreText.SetText($"{score} Bubbles");
     }
 
     private void OnDestroy()
@@ -41,7 +36,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore(int amout=1)
     {
         score += amout;
-        scoreText.SetText(score.ToString());
+        scoreText.SetText($"{score} Bubbles");
     }
     
     public int GetScore() 
@@ -64,12 +59,6 @@ public class GameManager : MonoBehaviour
     //by changing the sign you can rotate the list left or right
     public void SwitchFactories(int val = 1)
     {
-        if (CustomEvents.current == null) {
-            Debug.LogError("No CustomEvents on the scene");
-            return;
-        }
-        CustomEvents.current.FactorySwitch();
-
         factoryPointer = (factoryPointer+val)%factories.Length;
     }
     public Factory GetCurrentFactory()

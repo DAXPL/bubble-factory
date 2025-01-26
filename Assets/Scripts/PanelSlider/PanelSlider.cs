@@ -26,7 +26,7 @@ public class PanelSlider : MonoBehaviour {
     [Header("UI Elements")]
     [Tooltip("The CanvasGroup to diable when panel is moving (This prevents " +
         "from letting user to click button while the panel is moving).")]
-    [SerializeField] private CanvasGroup canva;
+    [SerializeField] private CanvasGroup[] canvas;
     [SerializeField] private PanelSliderButtonManager panelSliderButtonManager;
 
     [Header("Configuration")]
@@ -76,8 +76,10 @@ public class PanelSlider : MonoBehaviour {
         }
 
         // Toggle main menu buttons
-        if (canva != null) {
-            panelSliderButtonManager.ToggleCanvasGroup(canva);
+        if (canvas.Length != 0) {
+            foreach (CanvasGroup c in canvas) {
+                panelSliderButtonManager.ToggleCanvasGroup(c);
+            }
         }
 
         // Check if the menu should be closed or open
@@ -128,9 +130,12 @@ public class PanelSlider : MonoBehaviour {
             yield return null;
         }
 
+
         // Toggle main menu buttons
-        if (canva != null) {
-            panelSliderButtonManager.ToggleCanvasGroup(canva);
+        if (canvas.Length != 0) {
+            foreach (CanvasGroup c in canvas) {
+                panelSliderButtonManager.ToggleCanvasGroup(c);
+            }
         }
         currentMoveCoroutine = null;
     }
