@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
@@ -74,9 +75,16 @@ public class Upgrade : MonoBehaviour {
             return true;
         }
 
-        // Show Popup "not enugh bubbles
+
+        StartCoroutine(TogglePopUp());
+
         UnityEngine.Debug.LogWarning("Not enough bubbles");
         return false;
     }
 
+    private IEnumerator TogglePopUp() {
+        GameManager.Instance.GetPopUp().SetActive(true);
+        yield return new WaitForSeconds(1);
+        GameManager.Instance.GetPopUp().SetActive(false);
+    }
 }

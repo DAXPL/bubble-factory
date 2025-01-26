@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int score = 1000;
+    private int score = 0;
     public static GameManager Instance;
     [SerializeField] private Factory[] factories;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private GameObject PopUp;
     private int factoryPointer=0;
 
     private void Awake()
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         StopAllCoroutines();
+    }
+
+    public GameObject GetPopUp() {
+        return PopUp;
     }
 
     public void IncreaseScore(int amout=1)
